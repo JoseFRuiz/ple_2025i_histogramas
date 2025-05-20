@@ -74,3 +74,6 @@ tabla <- data.frame(
 )
 
 HistogramasTabla(tabla)
+
+write.csv(tabla, file = "misdatos.csv", row.names = FALSE)
+# Cargar la tabla
