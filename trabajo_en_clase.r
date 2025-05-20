@@ -34,3 +34,20 @@ hist(df$Tnorm,
      border = "black",
     breaks = 9,
      xlim = c(25, 35))
+
+
+HistogramasTabla <- function(df){
+     namvars <- names(df)
+     n <- length(namvars)
+     par(mfrow = c(1, n)) # Una fila, n columnas
+     for(var in namvars){
+          # Histograma para cada variable
+          hist(df[[var]], 
+               main = var, 
+               xlab = "Rangos", 
+               ylab = "Frecuencia", 
+               col = "lightblue", 
+               border = "black")
+     }
+     par(mfrow = c(1, 1)) # Regresar a una sola gráfica
+}
