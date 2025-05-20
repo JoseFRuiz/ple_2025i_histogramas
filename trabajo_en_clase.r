@@ -84,3 +84,16 @@ tabla2 <- read.csv("misdatos.csv")
 tablaA <- tabla2[tabla2$Categoricos == "A",] # Filtrar por categoría
 mean(tablaA$Tunif) # Media de la variable Tunif para la categoría A
 mean(tablaA$Texp)
+
+time <- seq(0, 1, by = 0.01)
+
+tablafuncs <- data.frame(
+     "Tiempo" = time,
+     "Sin" = sin(2 * pi * time),
+     "Cos" = cos(2 * pi * time)
+)
+
+plot(tablafuncs$Tiempo, tablafuncs$Sin, type = "l", col = "blue", lwd = 2,
+     main = "Funciones Trigonométricas",
+     xlab = "Tiempo (s)", ylab = "Valor")
+lines(tablafuncs$Tiempo, tablafuncs$Cos, col = "red", lwd = 2)
