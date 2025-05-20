@@ -77,3 +77,10 @@ HistogramasTabla(tabla)
 
 write.csv(tabla, file = "misdatos.csv", row.names = FALSE)
 # Cargar la tabla
+
+
+tabla2 <- read.csv("misdatos.csv")
+
+tablaA <- tabla2[tabla2$Categoricos == "A",] # Filtrar por categoría
+mean(tablaA$Tunif) # Media de la variable Tunif para la categoría A
+mean(tablaA$Texp)
